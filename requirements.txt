@@ -1,1 +1,2 @@
-git+https://github.com/toddrob99/MLB-StatsAPI.git
+mlb-statsapi
+
