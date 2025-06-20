@@ -100,7 +100,7 @@ with open(output_filename, "w") as f:
 conn = psycopg2.connect("postgresql://postgres:onfxNlZFioFScuucmNhZKHhzPggcMfvd@postgres.railway.internal:5432/railway")  # use DATABASE_URL from Railway
 cur = conn.cursor()
 
-with open(output_filename, "r") as f:
+with open("mlb_box_scores.jsonl", "r") as f:
     for line in f:
         cur.execute("INSERT INTO json_mlb (raw_json) VALUES (%s)", [json.loads(line)])
 
