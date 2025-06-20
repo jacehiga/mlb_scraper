@@ -2,6 +2,17 @@ import statsapi
 import json
 import time
 from datetime import date
+import re
+
+def clean_final_score_keys(raw_json):
+    if 'final_score' in raw_json:
+        fixed = {}
+        for k, v in raw_json['final_score'].items():
+            match = re.search(r"\d+", k)
+            if match:
+                fixed[match.group()] = v
+        raw_json['final_score'] = fixed
+    return raw_json
 
 # Set the date (use today or hardcode for testing)
 today = str(date.today())
@@ -87,6 +98,7 @@ for game in schedule:
         "home_pitchers": box.get('homePitchers', [])
     }
 
+    game_data = clean_final_score_keys(game_data)
     all_games.append(game_data)
 
 ## Save to JSON formatted table
