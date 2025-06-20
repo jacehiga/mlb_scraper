@@ -1,2 +1,2 @@
 mlb-statsapi
-
+psycopg2-binary
