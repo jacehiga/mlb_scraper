@@ -1,7 +1,7 @@
 import statsapi
 import json
 import time
-from datetime import date
+from datetime import datetime, timedelta
 import re
 
 def clean_final_score_keys(raw_json):
@@ -15,7 +15,7 @@ def clean_final_score_keys(raw_json):
     return raw_json
 
 # Set the date (use today or hardcode for testing)
-today = str(date.today())
+today = (datetime.now() - timedelta(days=1)).date()
 
 # Prepare container for results
 all_games = []
