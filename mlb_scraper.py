@@ -115,7 +115,7 @@ def main():
     
     with open("mlb_box_scores.jsonl", "r", encoding="utf-8") as f:
         for line in f:
-            cur.execute("INSERT INTO json_mlb (raw_json) VALUES (%s)", [json.loads(line)])
+            cur.execute("INSERT INTO json_mlb (raw_json) VALUES (%s)", [json.dumps(json.loads(line))])
     
     conn.commit()
     cur.close()
