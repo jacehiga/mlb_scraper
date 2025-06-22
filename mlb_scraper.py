@@ -106,7 +106,7 @@ def main():
     output_filename = "mlb_box_scores.jsonl"
     with open(output_filename, "w", encoding="utf-8") as f:
         for game in all_games:
-            f.write(json.dumps(game, ensure_ascii=False) + "\n")
+            f.write(json.dumps(game, ensure_ascii=False, default=str) + "\n")
     
     # Insert into PostgreSQL
     conn = psycopg2.connect("your_connection_string_here")  # Replace with your actual connection string
