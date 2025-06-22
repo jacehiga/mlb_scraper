@@ -14,6 +14,7 @@ def clean_final_score_keys(raw_json):
         raw_json['final_score'] = fixed
     return raw_json
 
+def main()
 # Set the date (use today or hardcode for testing)
 today = (datetime.now() - timedelta(days=1)).date()
 
@@ -118,4 +119,8 @@ with open("mlb_box_scores.jsonl", "r", encoding="utf-8") as f:
 conn.commit()
 cur.close()
 conn.close()
+
+
+if __name__ == "__main__":
+    main()
 
