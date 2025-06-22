@@ -14,7 +14,7 @@ def clean_final_score_keys(raw_json):
         raw_json['final_score'] = fixed
     return raw_json
 
-def main()
+def main():
 # Set the date (use today or hardcode for testing)
 today = (datetime.now() - timedelta(days=1)).date()
 
