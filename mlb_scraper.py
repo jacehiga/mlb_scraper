@@ -110,7 +110,7 @@ def main():
             f.write(json.dumps(game, ensure_ascii=False, default=str) + "\n")
     
     # Insert into PostgreSQL
-    conn = psycopg2.connect("your_connection_string_here")  # Replace with your actual connection string
+    conn = psycopg2.connect("postgresql://postgres:onfxNlZFioFScuucmNhZKHhzPggcMfvd@postgres.railway.internal:5432/railway")  # Replace with your actual connection string
     cur = conn.cursor()
     
     with open("mlb_box_scores.jsonl", "r", encoding="utf-8") as f:
