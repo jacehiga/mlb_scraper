@@ -3,6 +3,7 @@ import json
 import time
 from datetime import datetime, timedelta
 import re
+import psycopg2
 
 def clean_final_score_keys(raw_json):
     if 'final_score' in raw_json:
