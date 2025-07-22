@@ -17,7 +17,7 @@ def clean_final_score_keys(raw_json):
 
 def main():
     # Set the date (use today or hardcode for testing)
-    today = (datetime.now() - timedelta(days=1)).date()
+    today = datetime(2024, 7, 7).date()
     
     # Prepare container for results
     all_games = []
